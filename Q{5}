@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+void encrypt(char str1[100])
+{
+    char evenPos = '$', oddPos = '#';
+
+    int repeat, ascii;
+
+    for (int i = 0; i <= strlen(str1); i++)
+        {
+
+
+        ascii = str1[i];
+        repeat = ascii >= 97 ? ascii - 96 : ascii - 64;
+
+        for (int j = 0; j < repeat; j++)
+            {
+
+            if (i % 2 == 0)
+                printf("%c", oddPos);
+            else
+                printf("%c", evenPos);
+        }
+    }
+}
+
+
+void main()
+{
+    char str1[100];
+    printf("input the sting:  ");
+    gets(str1);
+    encrypt(str1);
+}
